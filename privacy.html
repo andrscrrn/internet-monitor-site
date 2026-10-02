@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy, Internet Monitor for Mac</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="muted small">Internet Monitor for Mac &middot; Effective October 2, 2026</p>
+
+  <h2>Summary</h2>
+  <p><strong>Internet Monitor collects no data.</strong> There are no accounts, no analytics, no advertising, no tracking, and no third-party SDKs. Nothing you do in the app, and nothing the app measures, ever leaves your Mac.</p>
+
+  <h2>What stays on your Mac</h2>
+  <p>The app stores its measurements (connection checks, outages, speed test results) and your preferences as plain files on your Mac, inside the app's own sandboxed container. They are never uploaded anywhere. Deleting the app deletes them.</p>
+
+  <h2>Network connections the app makes</h2>
+  <p>Internet Monitor's job is to measure your connection, which requires talking to the internet. This is the complete list of connections, none of which carry any personal data:</p>
+  <ul>
+    <li><strong>Reachability probes</strong> to public DNS servers (1.1.1.1, 8.8.8.8, 9.9.9.9): brief connection handshakes used to measure latency and detect outages.</li>
+    <li><strong>A DNS resolution check</strong> (resolving google.com) to detect DNS failures.</li>
+    <li><strong>A public IP lookup</strong> via api.ipify.org, so the app can show you your public IP address. The response is displayed locally and nothing beyond the standard request is sent.</li>
+    <li><strong>Optional speed tests</strong> against speed.cloudflare.com. These are off by default and only run if you enable them.</li>
+  </ul>
+
+  <h2>Permissions</h2>
+  <p>The app may ask for permission to send notifications (outage and recovery alerts). Saving a report or log export writes only to the location you choose in the save dialog.</p>
+
+  <h2>App Privacy label</h2>
+  <p>On the Mac App Store, this app's privacy label is <strong>Data Not Collected</strong>.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy ever changes, the updated version will be published at this address with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Write to <a href="mailto:hello@andrescarreno.co">hello@andrescarreno.co</a>.</p>
+
+  <nav><a href="index.html">Home</a><a href="support.html">Support</a></nav>
+</main>
+<footer>&copy; 2026 Andres Carreno</footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask your AI, Internet Monitor for Mac</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Ask your AI about your internet</h1>
+  <p class="muted">Internet Monitor includes an MCP server, so Claude, ChatGPT or any MCP-compatible assistant can answer questions about <em>your</em> connection from <em>your</em> local data.</p>
+
+  <h2>What you can ask</h2>
+  <ul>
+    <li>"How was my internet this week?"</li>
+    <li>"When was my last outage and how long did it last?"</li>
+    <li>"Compare my home and office networks."</li>
+    <li>"Should I complain to my ISP? Make the case with my data."</li>
+  </ul>
+
+  <h2>Claude Desktop (one click)</h2>
+  <p><a href="internet-monitor.mcpb"><strong>Download the extension</strong></a> and double-click it: Claude Desktop installs it with the app's name and icon. That's it. You will find it under Settings &rarr; Connectors.</p>
+
+  <h2>ChatGPT Desktop and other MCP clients</h2>
+  <p>Point the client at the server bundled inside the app:</p>
+  <p><code>/Applications/Internet Monitor.app/Contents/MacOS/internet-monitor-mcp</code></p>
+  <p>For clients configured by JSON (an <code>mcpServers</code> map), the entry is:</p>
+  <p><code>{"Internet Monitor": {"command": "/Applications/Internet Monitor.app/Contents/MacOS/internet-monitor-mcp"}}</code></p>
+
+  <h2>What the assistant can see</h2>
+  <p>Five read-only tools: current status, uptime summaries, the outage list, latency statistics, and the networks you have used, for periods up to 30 days and filterable per network. The server reads the app's local files only, works even when the app is closed, opens no network port, and sends nothing anywhere. Your assistant's own privacy policy governs what happens to the answers it generates.</p>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li>The Internet Monitor app must be installed in Applications; the extension runs the server bundled inside it.</li>
+    <li>After installing, fully restart the assistant app so it picks up the new connector.</li>
+    <li>No data yet? The app needs a little monitoring time before there is history to ask about.</li>
+  </ul>
+
+  <nav><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+</main>
+<footer>&copy; 2026 Andres Carreno</footer>
+</body>
+</html>

@@ -83,6 +83,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   white-space: nowrap;
 }
 .brand:hover { text-decoration: none; }
+.brand-sub { color: var(--hero-muted); font-weight: 600; white-space: pre; }
 .ring-mini {
   width: 20px;
   height: 20px;
@@ -367,6 +368,9 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
   .grid { grid-template-columns: 1fr 1fr; }
   .nav nav { gap: 14px; }
   .nav nav .hide-sm { display: none; }
+}
+@media (max-width: 700px) {
+  .brand-sub { display: none; }
 }
 @media (max-width: 560px) {
   .grid, .strip { grid-template-columns: 1fr; }

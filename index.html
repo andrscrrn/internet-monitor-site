@@ -3,22 +3,215 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Internet Monitor for Mac</title>
-<link rel="stylesheet" href="style.css">
+<title>Internet Monitor for Mac: the internet monitor that gives you proof</title>
+<meta name="description" content="A native macOS menu bar app that catches outages as short as one second, keeps evidence per network, and turns it into a PDF report for your ISP. Your AI can read it too (MCP).">
+<link rel="canonical" href="https://andrscrrn.github.io/internet-monitor-site/">
+<link rel="alternate" hreflang="en" href="https://andrscrrn.github.io/internet-monitor-site/">
+<link rel="alternate" hreflang="es" href="https://andrscrrn.github.io/internet-monitor-site/index.es.html">
+<meta property="og:title" content="Internet Monitor for Mac">
+<meta property="og:description" content="The internet monitor that gives you proof. Sub-second outage detection, per-network evidence, and a PDF report for your ISP.">
+<meta property="og:image" content="https://andrscrrn.github.io/internet-monitor-site/assets/img/og.jpg">
+<meta property="og:url" content="https://andrscrrn.github.io/internet-monitor-site/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="landing.css">
 </head>
 <body>
+
+<header class="hero">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./"><span class="ring-mini" aria-hidden="true"></span>Internet Monitor</a>
+      <nav>
+        <a href="#features" class="hide-sm">Features</a>
+        <a href="#mcp">AI&nbsp;+&nbsp;MCP</a>
+        <a href="support.html">Support</a>
+        <a href="index.es.html" lang="es" hreflang="es">Español</a>
+      </nav>
+    </div>
+
+    <div class="hero-inner">
+      <div class="ring-wrap" aria-hidden="true">
+        <div class="ring"></div>
+        <span class="pct">99.8%</span>
+      </div>
+      <h1>The internet monitor that gives you <em>proof</em></h1>
+      <p class="sub">A native menu bar app for your Mac that catches outages as short as one second, keeps the evidence separated by network, and turns it into a PDF report your provider can't argue with.</p>
+      <a class="store-badge" href="https://apps.apple.com/app/id6818842901">
+        <img src="assets/img/mac-app-store-badge-en.svg" alt="Download on the Mac App Store">
+      </a>
+      <p class="fineprint">US$4.99, one-time purchase &middot; macOS 14 or later &middot; App Privacy: Data Not Collected</p>
+      <figure class="shot hero-shot">
+        <img src="assets/img/dashboard-en.webp" alt="Internet Monitor dashboard showing uptime, latency charts and a list of timestamped outages" width="1600" height="1032" fetchpriority="high">
+      </figure>
+    </div>
+  </div>
+</header>
+
 <main>
-  <span class="ring" aria-hidden="true"></span>
-  <h1>Internet Monitor for Mac</h1>
-  <p class="muted">A native menu bar app that watches your internet connection: instant status at a glance, sub-second outage history, latency charts, and a PDF report you can hand to your ISP.</p>
-  <p>Coming soon to the Mac App Store.</p>
-  <h2>Private by design</h2>
-  <p>Everything the app measures stays on your Mac. No accounts, no analytics, no tracking, no data collection. Read the <a href="privacy.html">privacy policy</a>.</p>
-  <h2>Ask your AI</h2>
-  <p>Claude, ChatGPT or any MCP client can answer "how was my internet this week?" from your own data. <a href="ai.html">Set it up in one click</a>.</p>
-  <h2>Need help?</h2>
-  <p>Visit the <a href="support.html">support page</a>.</p>
+  <div class="container">
+
+    <section class="strip" aria-label="Key numbers">
+      <div class="reveal"><div class="num green">1 second</div><div class="label">outages this short are caught and confirmed</div></div>
+      <div class="reveal"><div class="num blue">365 days</div><div class="label">of history, stored as plain files on your Mac</div></div>
+      <div class="reveal"><div class="num purple">0 bytes</div><div class="label">of your data collected, ever</div></div>
+    </section>
+
+    <section id="features">
+
+      <article class="feature reveal">
+        <div class="copy">
+          <span class="eyebrow"><span class="badge-ic red" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 L5 14 h6 l-1 8 L19 10 h-6 z"/></svg></span>Sub-second outage detection</span>
+          <h2>Catch the drops your ISP says never happened</h2>
+          <p>Internet Monitor checks your connection every two seconds, down to every second if you like. A failed check is <strong>confirmed with an immediate retry</strong>, so even a one-second drop lands in your history as a fact, not a feeling.</p>
+          <p>Expand any outage to see exactly what failed: each probe target, each latency sample, and whether DNS was still answering.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/img/drilldown-en.webp" alt="Outage drill-down showing per-probe results around a confirmed one-second outage" width="1600" height="1035" loading="lazy">
+        </figure>
+      </article>
+
+      <article class="feature flip reveal">
+        <div class="copy">
+          <span class="eyebrow"><span class="badge-ic blue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3 h10 a2 2 0 0 1 2 2 v14 a2 2 0 0 1 -2 2 H7 a2 2 0 0 1 -2 -2 V5 a2 2 0 0 1 2 -2 z M9 8 h6 M9 12 h6 M9 16 h4"/></svg></span>ISP PDF report</span>
+          <h2>Proof you can send your provider</h2>
+          <p>"It feels unstable" gets you nowhere with support. Pick a period and a network and get a tidy PDF: <strong>every outage timestamped</strong>, uptime and latency per day, ready to attach to your complaint.</p>
+          <p>Let the data argue for you.</p>
+        </div>
+        <figure class="shot light">
+          <img src="assets/img/report-en.webp" alt="Generated PDF internet connection report open in Preview, with summary stats and charts" width="1400" height="1227" loading="lazy">
+        </figure>
+      </article>
+
+      <article class="feature reveal">
+        <div class="copy">
+          <span class="eyebrow"><span class="badge-ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9 a14 14 0 0 1 20 0 M5.5 13 a9 9 0 0 1 13 0 M9 16.8 a4.5 4.5 0 0 1 6 0 M12 20.2 h0.01"/></svg></span>Per-network evidence</span>
+          <h2>Evidence that blames the right network</h2>
+          <p>Every check is <strong>labeled with the network it ran on</strong>. Home Wi-Fi, office, hotspot: each keeps its own uptime, outages and report, so your complaint only blames the provider that deserves it. No other monitor does this.</p>
+          <p>The menu bar panel keeps the essentials one click away: live latency, DNS health, local and public IP, bandwidth and data usage.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/img/panel-en.webp" alt="Menu bar panel showing connection status, bandwidth, IPs and the current network name" width="760" height="945" loading="lazy" style="max-width: 420px; margin: 0 auto;">
+        </figure>
+      </article>
+
+      <article class="feature flip reveal">
+        <div class="copy">
+          <span class="eyebrow"><span class="badge-ic yellow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 a6 6 0 0 0 -6 6 v4 l-2 3 h16 l-2 -3 V9 a6 6 0 0 0 -6 -6 z M10 19 a2 2 0 0 0 4 0"/></svg></span>Smart notifications</span>
+          <h2>Know the moment it drops, and returns</h2>
+          <p>Native notifications when the connection goes down and when it comes back, <strong>with the outage duration</strong>. Set your own threshold and sound, and repeated flapping collapses into a single "unstable connection" notice instead of a storm.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/img/notifications-en.webp" alt="macOS notifications: internet is down, and internet is back after 1.0s" width="1400" height="762" loading="lazy">
+        </figure>
+      </article>
+
+    </section>
+
+    <section id="mcp" class="mcp reveal">
+      <div class="mcp-inner">
+        <div class="copy">
+          <span class="pill">Only here: bundled MCP server</span>
+          <h2>Ask your AI about your internet</h2>
+          <p class="q">"How was my internet this week?"</p>
+          <p>A bundled MCP server lets <strong>Claude, ChatGPT or any MCP client</strong> answer from your own local data: uptime, outages, latency, per network. One-click install for Claude, a short setup for everything else.</p>
+          <p>Your measurements never leave your Mac; your AI comes to them. No other internet monitor has this.</p>
+          <p><a class="link" href="ai.html">Set it up in one click &rarr;</a></p>
+        </div>
+        <figure class="shot">
+          <img src="assets/img/ai-en.webp" alt="Onboarding screen: ask your AI about your internet, with an Install Claude Extension button" width="1200" height="1315" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="privacy reveal">
+      <div class="seal"><span aria-hidden="true">&#10003;</span> App Privacy: Data Not Collected</div>
+      <h2>Private by design</h2>
+      <p>No account, no analytics, no tracking. Everything the app measures stays on your Mac as plain files you can export anytime. The app only talks to the internet to measure it.</p>
+      <p><a href="privacy.html">Read the privacy policy</a></p>
+    </section>
+
+    <section class="grid" aria-label="More features">
+      <div class="cardlet reveal">
+        <div class="head"><span class="badge-ic blue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 13 L17 8 M4 15 a8 8 0 0 1 16 0 M7.5 15 a4.5 4.5 0 0 1 9 0"/></svg></span><h3>Live bandwidth and usage</h3></div>
+        <p>Current up and down rates plus cumulative data usage, read locally from interface counters.</p>
+      </div>
+      <div class="cardlet reveal">
+        <div class="head"><span class="badge-ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7 v5 l3 3 M21 12 a9 9 0 1 1 -9 -9 a9 9 0 0 1 9 9 z"/></svg></span><h3>Your cadence</h3></div>
+        <p>Check every 1 to 10 seconds, changeable from the dashboard toolbar. Each check is a few hundred bytes.</p>
+      </div>
+      <div class="cardlet reveal">
+        <div class="head"><span class="badge-ic yellow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 12 l2 2 l4 -5 M12 3 l7 3 v6 c0 4 -3 7 -7 9 c-4 -2 -7 -5 -7 -9 V6 z"/></svg></span><h3>Honest measurements</h3></div>
+        <p>Wi-Fi off or cable out is never logged as an ISP outage, and stats weigh by time, not by sample count.</p>
+      </div>
+      <div class="cardlet reveal">
+        <div class="head"><span class="badge-ic purple" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4 c-2 0 -3 1 -3 3 v2 c0 1.5 -1 2 -2 3 c1 1 2 1.5 2 3 v2 c0 2 1 3 3 3 M16 4 c2 0 3 1 3 3 v2 c0 1.5 1 2 2 3 c-1 1 -2 1.5 -2 3 v2 c0 2 -1 3 -3 3"/></svg></span><h3>Raw data export</h3></div>
+        <p>JSON and CSV export of every check and outage, for your own analysis or scripts.</p>
+      </div>
+      <div class="cardlet reveal">
+        <div class="head"><span class="badge-ic red" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12 m-2 0 a2 2 0 1 0 4 0 a2 2 0 1 0 -4 0 M12 12 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0 M12 2 v4 M12 18 v4 M2 12 h4 M18 12 h4"/></svg></span><h3>Custom probe targets</h3></div>
+        <p>Point the checks at your own server or router, with a configurable port.</p>
+      </div>
+      <div class="cardlet reveal">
+        <div class="head"><span class="badge-ic green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 c4 3 6 7 6 11 a6 6 0 0 1 -12 0 c0 -4 2 -8 6 -11 z M12 21 v-6"/></svg></span><h3>Native and lightweight</h3></div>
+        <p>Built in Swift and SwiftUI. Around 0.5% CPU while monitoring, with optional launch at login.</p>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <h2>Stop arguing with your ISP. Start proving.</h2>
+      <p>One purchase, every feature included. No subscription.</p>
+      <a class="store-badge" href="https://apps.apple.com/app/id6818842901">
+        <img src="assets/img/mac-app-store-badge-en.svg" alt="Download on the Mac App Store">
+      </a>
+      <p class="fineprint">US$4.99 &middot; macOS 14 or later</p>
+    </section>
+
+  </div>
 </main>
-<footer>&copy; 2026 Andres Carreno &middot; <a href="privacy.html">Privacy</a> &middot; <a href="support.html">Support</a></footer>
+
+<footer>
+  <div class="container">
+    <span>&copy; 2026 Andres Carreno</span>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="ai.html">AI setup</a>
+      <a href="index.es.html" lang="es" hreflang="es">Español</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add("js");
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var items = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add("in"); });
+  }
+  var pct = document.querySelector(".ring-wrap .pct");
+  if (pct && !reduce) {
+    var start;
+    pct.textContent = "0%";
+    requestAnimationFrame(function step(ts) {
+      if (start === undefined) start = ts;
+      var p = Math.min((ts - start) / 1400, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      pct.textContent = (99.8 * eased).toFixed(1) + "%";
+      if (p < 1) requestAnimationFrame(step);
+    });
+  }
+})();
+</script>
 </body>
 </html>

@@ -113,9 +113,9 @@ h3 { font-size: 1.05rem; font-weight: 650; }
 
 .hero-inner {
   text-align: center;
-  padding: 64px 0 0;
+  padding: 96px 0 0;
 }
-.hero h1 { color: #ffffff; max-width: 17em; margin: 24px auto 0; }
+.hero h1 { color: #ffffff; max-width: 17em; margin: 32px auto 0; }
 .hero h1 em {
   font-style: normal;
   background: linear-gradient(to bottom, #5be28a, var(--green-bright));
@@ -127,7 +127,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   color: var(--hero-muted);
   font-size: clamp(1.02rem, 2.4vw, 1.2rem);
   max-width: 38em;
-  margin: 16px auto 0;
+  margin: 24px auto 0;
 }
 
 /* The status ring: mostly green, with the tiny degraded/down slivers from the app icon. */
@@ -165,7 +165,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   color: #ffffff;
 }
 
-.store-badge { display: inline-block; margin-top: 32px; line-height: 0; }
+.store-badge { display: inline-block; margin-top: 48px; line-height: 0; }
 .store-badge img { height: 54px; width: auto; }
 .fineprint {
   color: var(--hero-muted);
@@ -174,7 +174,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
 }
 
 .hero-shot {
-  margin: 80px auto -4px;
+  margin: 96px auto -4px;
   max-width: 960px;
 }
 
@@ -385,7 +385,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
 @media (max-width: 560px) {
   .grid, .strip { grid-template-columns: 1fr; }
   .strip { gap: 28px; }
-  .hero-inner { padding-top: 36px; }
+  .hero-inner { padding-top: 56px; }
 }
 /* ---------- Motion ---------- */
 

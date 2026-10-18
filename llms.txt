@@ -20,3 +20,4 @@ Made by Andres Carreno. Spanish version of the site at /index.es.html.
 - [AI setup guide](https://internetmonitor.app/ai.html): how to connect Claude, ChatGPT or any MCP client to your connection data
 - [Support and FAQ](https://internetmonitor.app/support.html): common questions, report export, troubleshooting
 - [Privacy policy](https://internetmonitor.app/privacy.html): the complete list of network connections the app makes
+- [How to prove internet outages to your ISP](https://internetmonitor.app/prove-internet-outages.html): a practical guide to ruling out Wi-Fi problems, logging outages with timestamps for free, and getting outage credits from a provider (Spanish version at /prove-internet-outages.es.html)

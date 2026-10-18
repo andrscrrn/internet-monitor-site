@@ -40,10 +40,14 @@
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  /* The canvas behind the page: dark up top (the hero), the page's
-     bottom tone below, so macOS rubber-band overscroll never flashes
-     white at either end. */
-  background: linear-gradient(to bottom, var(--hero-top) 50%, var(--bg-bottom) 50%) fixed;
+  /* The canvas behind the page. Browsers paint the rubber-band
+     overscroll area with the root's background COLOR (images and
+     gradients are ignored there), so the solid color is what keeps
+     the bounce from flashing white; the hero is always dark, so dark
+     it is. The gradient covers the in-page canvas for both ends. */
+  background-color: var(--hero-top);
+  background-image: linear-gradient(to bottom, var(--hero-top) 50%, var(--bg-bottom) 50%);
+  background-attachment: fixed;
 }
 body {
   margin: 0;

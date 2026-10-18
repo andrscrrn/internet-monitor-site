@@ -15,14 +15,38 @@
   <url>
     <loc>https://internetmonitor.app/support.html</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetmonitor.app/support.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://internetmonitor.app/support.es.html"/>
+  </url>
+  <url>
+    <loc>https://internetmonitor.app/support.es.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetmonitor.app/support.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://internetmonitor.app/support.es.html"/>
   </url>
   <url>
     <loc>https://internetmonitor.app/ai.html</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetmonitor.app/ai.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://internetmonitor.app/ai.es.html"/>
+  </url>
+  <url>
+    <loc>https://internetmonitor.app/ai.es.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetmonitor.app/ai.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://internetmonitor.app/ai.es.html"/>
   </url>
   <url>
     <loc>https://internetmonitor.app/privacy.html</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetmonitor.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://internetmonitor.app/privacy.es.html"/>
+  </url>
+  <url>
+    <loc>https://internetmonitor.app/privacy.es.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://internetmonitor.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://internetmonitor.app/privacy.es.html"/>
   </url>
   <url>
     <loc>https://internetmonitor.app/prove-internet-outages.html</loc>

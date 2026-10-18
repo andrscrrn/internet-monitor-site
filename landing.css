@@ -82,7 +82,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 0;
+  padding: 24px 0;
 }
 .brand {
   display: flex;
@@ -113,9 +113,9 @@ h3 { font-size: 1.05rem; font-weight: 650; }
 
 .hero-inner {
   text-align: center;
-  padding: 48px 0 0;
+  padding: 64px 0 0;
 }
-.hero h1 { color: #ffffff; max-width: 17em; margin: 22px auto 0; }
+.hero h1 { color: #ffffff; max-width: 17em; margin: 24px auto 0; }
 .hero h1 em {
   font-style: normal;
   background: linear-gradient(to bottom, #5be28a, var(--green-bright));
@@ -127,7 +127,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   color: var(--hero-muted);
   font-size: clamp(1.02rem, 2.4vw, 1.2rem);
   max-width: 38em;
-  margin: 18px auto 0;
+  margin: 16px auto 0;
 }
 
 /* The status ring: mostly green, with the tiny degraded/down slivers from the app icon. */
@@ -165,16 +165,16 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   color: #ffffff;
 }
 
-.store-badge { display: inline-block; margin-top: 30px; }
+.store-badge { display: inline-block; margin-top: 32px; }
 .store-badge img { height: 54px; width: auto; }
 .fineprint {
   color: var(--hero-muted);
   font-size: 0.88rem;
-  margin: 14px 0 0;
+  margin: 12px 0 0;
 }
 
 .hero-shot {
-  margin: 48px auto -4px;
+  margin: 64px auto -4px;
   max-width: 960px;
 }
 
@@ -198,8 +198,8 @@ h3 { font-size: 1.05rem; font-weight: 650; }
 .strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  padding: 56px 0 8px;
+  gap: 24px;
+  padding: 64px 0 48px;
   text-align: center;
 }
 .strip .num {
@@ -219,7 +219,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   gap: clamp(28px, 5vw, 64px);
   align-items: center;
-  padding: 64px 0;
+  padding: 48px 0;
 }
 .feature.flip > .copy { order: 2; }
 .feature .eyebrow {
@@ -233,7 +233,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   letter-spacing: 0.06em;
   margin-bottom: 12px;
 }
-.feature h2 { margin-bottom: 14px; }
+.feature h2 { margin-bottom: 16px; }
 .feature p { color: var(--muted); margin: 0 0 12px; }
 .feature p strong { color: var(--text); font-weight: 650; }
 
@@ -284,7 +284,7 @@ h3 { font-size: 1.05rem; font-weight: 650; }
   padding: 5px 12px;
   margin-bottom: 16px;
 }
-.mcp h2 { color: #ffffff; margin-bottom: 14px; }
+.mcp h2 { color: #ffffff; margin-bottom: 16px; }
 .mcp p { color: var(--hero-muted); margin: 0 0 12px; }
 .mcp p strong { color: var(--hero-text); }
 .mcp .q {
@@ -299,20 +299,20 @@ h3 { font-size: 1.05rem; font-weight: 650; }
 
 .privacy {
   text-align: center;
-  padding: 72px 0 24px;
+  padding: 48px 0;
 }
-.privacy h2 { margin-bottom: 14px; }
+.privacy h2 { margin-bottom: 16px; }
 .privacy p { color: var(--muted); max-width: 42em; margin: 0 auto 10px; }
 .privacy .seal {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-weight: 700;
   color: var(--green);
   border: 1px solid currentColor;
   border-radius: 999px;
-  padding: 7px 16px;
+  padding: 8px 16px;
   font-size: 0.92rem;
 }
 
@@ -321,15 +321,15 @@ h3 { font-size: 1.05rem; font-weight: 650; }
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  padding: 40px 0 24px;
+  gap: 24px;
+  padding: 48px 0;
 }
 .cardlet {
   background: var(--card);
   border: 1px solid var(--card-stroke);
   border-radius: 14px;
   box-shadow: 0 6px 18px var(--card-shadow);
-  padding: 20px;
+  padding: 24px;
 }
 .cardlet .head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .cardlet p { margin: 0; color: var(--muted); font-size: 0.94rem; }
@@ -338,18 +338,18 @@ h3 { font-size: 1.05rem; font-weight: 650; }
 
 .cta {
   text-align: center;
-  padding: 72px 0 84px;
+  padding: 48px 0 96px;
 }
-.cta h2 { margin-bottom: 10px; }
+.cta h2 { margin-bottom: 12px; }
 .cta p { color: var(--muted); margin: 0 auto; max-width: 36em; }
-.cta .store-badge { margin-top: 26px; }
+.cta .store-badge { margin-top: 32px; }
 .cta .fineprint { color: var(--muted); }
 
 /* ---------- Footer ---------- */
 
 footer {
   border-top: 1px solid var(--card-stroke);
-  padding: 26px 0 40px;
+  padding: 32px 0 48px;
   color: var(--muted);
   font-size: 0.88rem;
 }

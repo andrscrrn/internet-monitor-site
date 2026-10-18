@@ -38,7 +38,13 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* The canvas behind the page: dark up top (the hero), the page's
+     bottom tone below, so macOS rubber-band overscroll never flashes
+     white at either end. */
+  background: linear-gradient(to bottom, var(--hero-top) 50%, var(--bg-bottom) 50%) fixed;
+}
 body {
   margin: 0;
   color: var(--text);

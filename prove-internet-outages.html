@@ -31,11 +31,41 @@
   "inLanguage": "en"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I prove internet outages to my ISP?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Log every drop with exact timestamps for at least a week: run a timestamped ping from Terminal or use a monitoring app, capture your router's event log, and test over Ethernet to rule out Wi-Fi. Then open a ticket and attach a log showing each outage's start, end, duration, and frequency."}
+    },
+    {
+      "@type": "Question",
+      "name": "How can I log internet outages for free?",
+      "acceptedAnswer": {"@type": "Answer", "text": "On a Mac, run a ping loop in Terminal that stamps every reply with the date and time and saves it to a file. Your router's own event log (reconnections, DHCP renewals, loss of sync) is also free evidence from the ISP's equipment; capture it before rebooting, since many routers wipe it."}
+    },
+    {
+      "@type": "Question",
+      "name": "What evidence does an ISP accept for outages?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A log that answers four questions: exactly when each outage started and ended, how long it lasted, how often it happens, and whether it was really the line, shown by drops on a wired connection or across every device at once. Speed test screenshots prove speed, not continuity."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get compensation for internet outages?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Many providers' terms include credits for downtime, but almost none apply them unless you ask with dates in hand. Open a ticket, send the evidence through a channel that leaves a record, and ask for outage credits. If nothing changes, escalate to a supervisor and then to your country's telecom regulator."}
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <main>
   <h1>How to prove internet outages to your ISP</h1>
   <p class="muted">Updated October 2026</p>
+
+  <p><strong>The short answer:</strong> log every drop with exact timestamps for at least a week. Run a timestamped ping from Terminal or use a monitoring app, photograph your router's event log, and test over Ethernet to rule out Wi-Fi. Then open a ticket and attach a log showing each outage's start, end, duration, and frequency.</p>
 
   <p>You call support, they run a line test, and the verdict is always the same: "everything looks fine on our end." Meanwhile your video calls keep freezing and your downloads keep dying. The problem is not that support is lying to you; it is that their test ran at one moment in time, and your outages happened at other moments. To win this argument you need evidence with timestamps. This guide shows how to collect it, for free, and what to do with it.</p>
 

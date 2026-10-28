@@ -13,37 +13,37 @@ export interface SitePage {
 export const PAGES: SitePage[] = [
   {
     en: "/",
-    es: "/index.es.html",
+    es: "/es",
     title: "Home",
     summary: "product overview with real screenshots",
   },
   {
-    en: "/ai.html",
-    es: "/ai.es.html",
+    en: "/ai",
+    es: "/es/ai",
     title: "AI setup guide",
     summary: "how to connect Claude, ChatGPT or any MCP client to your connection data",
   },
   {
-    en: "/support.html",
-    es: "/support.es.html",
+    en: "/support",
+    es: "/es/support",
     title: "Support and FAQ",
     summary: "common questions, report export, troubleshooting",
   },
   {
-    en: "/privacy.html",
-    es: "/privacy.es.html",
+    en: "/privacy",
+    es: "/es/privacy",
     title: "Privacy policy",
     summary: "the complete list of network connections the app makes",
   },
   {
-    en: "/prove-internet-outages.html",
-    es: "/prove-internet-outages.es.html",
+    en: "/prove-internet-outages",
+    es: "/es/prove-internet-outages",
     title: "How to prove internet outages to your ISP",
     summary:
       "a practical guide to ruling out Wi-Fi problems, logging outages with timestamps for free, and getting outage credits from a provider",
   },
   {
-    en: "/shipping-mcp-in-a-sandboxed-mac-app.html",
+    en: "/shipping-mcp-in-a-sandboxed-mac-app",
     title: "Shipping an MCP server inside a sandboxed Mac App Store app",
     summary:
       "field notes on bundling an MCP server in a Mac App Store app: the stdio design, a launcher bug and a Chinese AI rule that rejected an update",

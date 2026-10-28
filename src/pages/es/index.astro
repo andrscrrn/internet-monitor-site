@@ -1,15 +1,15 @@
 ---
 import { getImage } from "astro:assets";
-import LandingLayout from "../layouts/LandingLayout.astro";
-import Shot from "../components/Shot.astro";
-import StoreBadge from "../components/StoreBadge.astro";
-import { PRICE_LABEL, PRICE_USD } from "../config/site";
-import demoPoster from "../assets/img/demo-poster.webp";
-import drilldownEs from "../assets/img/drilldown-es.webp";
-import reportEs from "../assets/img/report-es.webp";
-import panelEs from "../assets/img/panel-es.webp";
-import notificationsEs from "../assets/img/notifications-es.webp";
-import aiEs from "../assets/img/ai-es.webp";
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import Shot from "../../components/Shot.astro";
+import StoreBadge from "../../components/StoreBadge.astro";
+import { PRICE_LABEL, PRICE_USD } from "../../config/site";
+import demoPoster from "../../assets/img/demo-poster.webp";
+import drilldownEs from "../../assets/img/drilldown-es.webp";
+import reportEs from "../../assets/img/report-es.webp";
+import panelEs from "../../assets/img/panel-es.webp";
+import notificationsEs from "../../assets/img/notifications-es.webp";
+import aiEs from "../../assets/img/ai-es.webp";
 
 // The poster is the LCP element; one WebP sized for a 2x hero is enough.
 const poster = await getImage({ src: demoPoster, format: "webp", width: 1564 });
@@ -27,7 +27,7 @@ const jsonLd = {
     "price": PRICE_USD,
     "priceCurrency": "USD"
   },
-  "url": "https://internetmonitor.app/index.es.html",
+  "url": "https://internetmonitor.app/es",
   "downloadUrl": "https://apps.apple.com/app/id6818842901",
   "author": {
     "@type": "Person",
@@ -40,10 +40,10 @@ const page = {
   "lang": "es" as const,
   "title": "Internet Monitor: Uptime para Mac, el monitor de internet que te da pruebas",
   "description": "Una app nativa para la barra de menús de tu Mac que detecta cortes de hasta un segundo, separa la evidencia por red y genera un reporte PDF para tu proveedor. Tu IA también puede consultarla (MCP).",
-  "path": "/index.es.html",
+  "path": "/es",
   "alternates": {
     "en": "/",
-    "es": "/index.es.html"
+    "es": "/es"
   },
   "ogTitle": "Internet Monitor: Uptime para Mac",
   "ogDescription": "El monitor de internet que te da pruebas. Cortes de hasta un segundo, evidencia por red y un reporte PDF para tu proveedor."
@@ -53,11 +53,11 @@ const page = {
 <header class="hero">
   <div class="container">
     <div class="nav">
-      <a class="brand" href="/index.es.html"><span class="ring-mini" aria-hidden="true"></span><span>Internet Monitor<span class="brand-sub">: Uptime</span></span></a>
+      <a class="brand" href="/es"><span class="ring-mini" aria-hidden="true"></span><span>Internet Monitor<span class="brand-sub">: Uptime</span></span></a>
       <nav>
         <a href="#features" class="hide-sm">Funciones</a>
         <a href="#mcp">IA&nbsp;+&nbsp;MCP</a>
-        <a href="/support.es.html">Soporte</a>
+        <a href="/es/support">Soporte</a>
         <a href="/" lang="en" hreflang="en">English</a>
       </nav>
     </div>
@@ -138,7 +138,7 @@ const page = {
           <p class="q">"¿Cómo estuvo mi internet esta semana?"</p>
           <p>Un servidor MCP incluido permite que <strong>Claude, ChatGPT o cualquier cliente MCP</strong> responda con tus propios datos locales: uptime, cortes, latencia, por red. Instalación de un clic para Claude y una configuración corta para el resto.</p>
           <p>Tus mediciones nunca salen de tu Mac; tu IA viene a ellas. Ningún otro monitor de internet tiene esto.</p>
-          <p><a class="link" href="/ai.es.html">Configúralo en un clic &rarr;</a></p>
+          <p><a class="link" href="/es/ai">Configúralo en un clic &rarr;</a></p>
         </div>
         <Shot src={aiEs} alt="Pantalla de bienvenida: pregúntale a tu IA por tu internet, con un botón para instalar la extensión de Claude" cap={420} />
       </div>
@@ -148,7 +148,7 @@ const page = {
       <div class="seal"><span aria-hidden="true">&#10003;</span> Privacidad: no se recopilan datos</div>
       <h2>Privada por diseño</h2>
       <p>Sin cuenta, sin analítica, sin rastreo. Todo lo que la app mide se queda en tu Mac como archivos simples que puedes exportar cuando quieras. La app solo usa internet para medirlo.</p>
-      <p><a href="/privacy.es.html">Lee la política de privacidad</a></p>
+      <p><a href="/es/privacy">Lee la política de privacidad</a></p>
     </section>
 
     <section class="grid" aria-label="Más funciones">

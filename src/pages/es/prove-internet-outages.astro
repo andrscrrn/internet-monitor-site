@@ -1,15 +1,15 @@
 ---
-import DocLayout from "../layouts/DocLayout.astro";
-import { storeUrl, PRICE_LABEL, PRICE_USD } from "../config/site";
+import DocLayout from "../../layouts/DocLayout.astro";
+import { storeUrl, PRICE_LABEL, PRICE_USD } from "../../config/site";
 
 const page = {
   "lang": "es" as const,
   "title": "Cómo demostrarle a tu proveedor que el internet se cae",
   "description": "Guía práctica para demostrar los cortes de internet a tu proveedor: descarta tu propio Wi-Fi, registra cada caída con hora exacta gratis, y sabe qué pedir en la llamada de soporte.",
-  "path": "/prove-internet-outages.es.html",
+  "path": "/es/prove-internet-outages",
   "alternates": {
-    "en": "/prove-internet-outages.html",
-    "es": "/prove-internet-outages.es.html"
+    "en": "/prove-internet-outages",
+    "es": "/es/prove-internet-outages"
   },
   "ogDescription": "Descarta tu propio Wi-Fi, registra cada caída con hora exacta gratis, y sabe qué pedir en la llamada de soporte.",
   "ogType": "article" as const,
@@ -28,7 +28,7 @@ const page = {
         "name": "Internet Monitor: Uptime",
         "url": "https://internetmonitor.app"
       },
-      "mainEntityOfPage": "https://internetmonitor.app/prove-internet-outages.es.html",
+      "mainEntityOfPage": "https://internetmonitor.app/es/prove-internet-outages",
       "inLanguage": "es"
     },
     {
@@ -123,7 +123,7 @@ const page = {
   </ul>
 
   <h2>O automatiza todo esto</h2>
-  <p><a href="/index.es.html">Internet Monitor: Uptime</a> es una app para la barra de menús del Mac que hace el paso 2 por ti, permanentemente: revisa tu conexión cada segundo, registra cada corte con inicio, fin y duración exactos, separa la evidencia por red (para que el historial de tu línea de casa no se contamine con el Wi-Fi del café) y exporta con un clic un reporte PDF hecho para adjuntar a un ticket de soporte. Cuesta <a href={storeUrl("site")} rel="noopener">{PRICE_LABEL} en el Mac App Store</a>, una sola vez, y no recopila ningún dato tuyo: todo se queda en tu Mac.</p>
+  <p><a href="/es">Internet Monitor: Uptime</a> es una app para la barra de menús del Mac que hace el paso 2 por ti, permanentemente: revisa tu conexión cada segundo, registra cada corte con inicio, fin y duración exactos, separa la evidencia por red (para que el historial de tu línea de casa no se contamine con el Wi-Fi del café) y exporta con un clic un reporte PDF hecho para adjuntar a un ticket de soporte. Cuesta <a href={storeUrl("site")} rel="noopener">{PRICE_LABEL} en el Mac App Store</a>, una sola vez, y no recopila ningún dato tuyo: todo se queda en tu Mac.</p>
 
-  <nav><a href="/index.es.html">Inicio</a><a href="/support.es.html">Soporte</a><a href="/prove-internet-outages.html">English</a></nav>
+  <nav><a href="/es">Inicio</a><a href="/es/support">Soporte</a><a href="/prove-internet-outages">English</a></nav>
 </DocLayout>

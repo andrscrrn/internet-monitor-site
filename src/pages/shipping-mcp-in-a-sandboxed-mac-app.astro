@@ -6,7 +6,7 @@ const page = {
   "lang": "en" as const,
   "title": "Shipping an MCP server inside a sandboxed Mac App Store app",
   "description": "Field notes from bundling an MCP server in a Mac App Store app: the stdio-over-HTTP decision, the launcher bug that only broke for customers, and the Chinese AI rule that rejected an update.",
-  "path": "/shipping-mcp-in-a-sandboxed-mac-app.html",
+  "path": "/shipping-mcp-in-a-sandboxed-mac-app",
   "ogDescription": "The stdio decision, the launcher bug that only broke for customers, and the Chinese AI rule that rejected an update.",
   "ogType": "article" as const,
   "jsonLd": [
@@ -24,7 +24,7 @@ const page = {
         "name": "Internet Monitor: Uptime",
         "url": "https://internetmonitor.app"
       },
-      "mainEntityOfPage": "https://internetmonitor.app/shipping-mcp-in-a-sandboxed-mac-app.html",
+      "mainEntityOfPage": "https://internetmonitor.app/shipping-mcp-in-a-sandboxed-mac-app",
       "inLanguage": "en"
     }
   ]
@@ -60,7 +60,7 @@ const page = {
 
   <h2>Was it worth it</h2>
   <p>Yes. The server cost a few hundred lines of Swift plus the bruises above. It also matches how I wanted the app to behave anyway: no accounts, no analytics, an App Privacy label that reads "Data Not Collected". The assistant comes to your data; your data goes nowhere.</p>
-  <p>The app is Internet Monitor: Uptime, <a href={storeUrl("hn")} rel="noopener">on the Mac App Store for ${PRICE_USD} one-time</a> (launch price for the first two weeks, then $9.99). The MCP setup guide is at <a href="/ai.html">internetmonitor.app/ai</a>.</p>
+  <p>The app is Internet Monitor: Uptime, <a href={storeUrl("hn")} rel="noopener">on the Mac App Store for ${PRICE_USD} one-time</a> (launch price for the first two weeks, then $9.99). The MCP setup guide is at <a href="/ai">internetmonitor.app/ai</a>.</p>
 
-  <nav><a href="/">Home</a><a href="/ai.html">AI setup</a><a href="/support.html">Support</a></nav>
+  <nav><a href="/">Home</a><a href="/ai">AI setup</a><a href="/support">Support</a></nav>
 </DocLayout>

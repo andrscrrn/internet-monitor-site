@@ -22,7 +22,7 @@ What makes it different from other internet monitors:
 - Bundled MCP server: Claude, ChatGPT or any MCP client can answer questions like "how was my internet this week?" from the user's own local data. One-click install for Claude Desktop. No other internet monitor has this.
 - Private by design: no accounts, no analytics, no tracking. The App Store privacy label is "Data Not Collected". The app only talks to the internet to measure it.
 
-Made by ${AUTHOR.name}. Product pages have a Spanish version at the same path with .es before .html (the home page's is /index.es.html).
+Made by ${AUTHOR.name}. Product pages have a Spanish version under /es (for example /es/support; the Spanish home page is /es).
 
 ## Pages
 

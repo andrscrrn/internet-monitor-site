@@ -1,0 +1,13 @@
+# Spanish pages moved from /page.es.html to /es/page (2026). English .html
+# URLs need no rule: Cloudflare Pages already redirects /page.html to /page.
+# Both forms are listed because GitHub Pages served /page.es too.
+/index.es.html                   /es                        301
+/index.es                        /es                        301
+/ai.es.html                      /es/ai                     301
+/ai.es                           /es/ai                     301
+/support.es.html                 /es/support                301
+/support.es                      /es/support                301
+/privacy.es.html                 /es/privacy                301
+/privacy.es                      /es/privacy                301
+/prove-internet-outages.es.html  /es/prove-internet-outages 301
+/prove-internet-outages.es       /es/prove-internet-outages 301

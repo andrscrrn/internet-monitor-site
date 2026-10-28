@@ -428,9 +428,20 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
   .js .hero-inner > :nth-child(4) { animation-delay: 0.36s; }
   .js .hero-inner > :nth-child(5) { animation-delay: 0.44s; }
   .js .hero-inner > :nth-child(6) { animation-delay: 0.55s; }
+  /* The demo video is the LCP element, and the browser does not count an
+     element as painted while its opacity is 0: it rises in without the fade
+     so the fade does not push LCP back by the stagger delay. */
+  .js .hero-inner > .hero-shot {
+    opacity: 1;
+    animation: rise-solid 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.55s both;
+  }
   @keyframes rise {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: none; }
+  }
+  @keyframes rise-solid {
+    from { transform: translateY(20px); }
+    to { transform: none; }
   }
   @keyframes ring-in {
     from { opacity: 0; transform: scale(0.45) rotate(-150deg); }

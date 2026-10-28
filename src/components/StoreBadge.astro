@@ -1,0 +1,14 @@
+---
+import { storeUrl, type Lang } from "../config/site";
+
+interface Props {
+  lang: Lang;
+  campaign?: string;
+}
+
+const { lang, campaign = "site" } = Astro.props;
+const alt = lang === "es" ? "Descárgalo en el Mac App Store" : "Download on the Mac App Store";
+---
+<a class="store-badge" href={storeUrl(campaign)} rel="noopener">
+  <img src={`/assets/img/mac-app-store-badge-${lang}.svg`} alt={alt} width="156" height="40">
+</a>

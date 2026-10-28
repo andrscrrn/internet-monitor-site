@@ -1,0 +1,41 @@
+---
+import Head from "../components/Head.astro";
+import StoreBadge from "../components/StoreBadge.astro";
+import "../styles/doc.css";
+import type { Lang } from "../config/site";
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;
+  alternates?: { en: string; es: string };
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: "website" | "article";
+  jsonLd?: object | object[];
+  noindex?: boolean;
+  /** The 404 page shows a plain copyright footer instead of the badge. */
+  bareFooter?: boolean;
+}
+
+const { lang, noindex = false, bareFooter = false, ...head } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <Head lang={lang} {...head}>
+    {noindex && <meta name="robots" content="noindex">}
+  </Head>
+</head>
+<body>
+<main>
+  <slot />
+</main>
+<footer>
+  {!bareFooter && <StoreBadge lang={lang} />}
+  <p>&copy; 2026 Andres Carreno</p>
+</footer>
+</body>
+</html>

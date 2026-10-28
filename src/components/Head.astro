@@ -1,0 +1,64 @@
+---
+import { SITE_URL, DEFAULT_OG_IMAGE, type Lang } from "../config/site";
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Site-relative path of this page, e.g. "/" or "/support.html". */
+  path: string;
+  /** Both language versions of this page, when a pair exists. */
+  alternates?: { en: string; es: string };
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: "website" | "article";
+  jsonLd?: object | object[];
+}
+
+const {
+  lang,
+  title,
+  description,
+  path,
+  alternates,
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = DEFAULT_OG_IMAGE,
+  ogType = "website",
+  jsonLd,
+} = Astro.props;
+
+const abs = (p: string) => new URL(p, SITE_URL).href;
+const ldBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={abs(path)}>
+{alternates && (
+  <>
+    <link rel="alternate" hreflang="en" href={abs(alternates.en)}>
+    <link rel="alternate" hreflang="es" href={abs(alternates.es)}>
+  </>
+)}
+<meta property="og:title" content={ogTitle}>
+<meta property="og:description" content={ogDescription}>
+<meta property="og:image" content={abs(ogImage)}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content={abs(path)}>
+<meta property="og:type" content={ogType}>
+<meta property="og:locale" content={lang === "es" ? "es_ES" : "en_US"}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content={abs(ogImage)}>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#121318">
+<slot />
+{ldBlocks.map((block) => (
+  <script type="application/ld+json" set:html={JSON.stringify(block)} />
+))}

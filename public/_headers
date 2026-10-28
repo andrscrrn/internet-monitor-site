@@ -1,0 +1,27 @@
+# Cloudflare Pages headers. Cloudflare APPENDS headers from every matching
+# rule, so each specific rule detaches the broad value with "! Cache-Control"
+# before setting its own; otherwise responses carry two Cache-Control lines.
+
+# HTML and everything unhashed: revalidate on every visit
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Hashed build output (inlined-CSS pages reference images here) never changes
+/_astro/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+# Hand-managed media that changes rarely
+/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=604800
+/og/*
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+# Download that must always match the checksum pinned in the MCP registry
+/internet-monitor.mcpb
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate

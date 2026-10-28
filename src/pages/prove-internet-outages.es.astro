@@ -1,68 +1,79 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cómo demostrarle a tu proveedor que el internet se cae</title>
-<meta name="description" content="Guía práctica para demostrar los cortes de internet a tu proveedor: descarta tu propio Wi-Fi, registra cada caída con hora exacta gratis, y sabe qué pedir en la llamada de soporte.">
-<link rel="canonical" href="https://internetmonitor.app/prove-internet-outages.es.html">
-<link rel="alternate" hreflang="en" href="https://internetmonitor.app/prove-internet-outages.html">
-<link rel="alternate" hreflang="es" href="https://internetmonitor.app/prove-internet-outages.es.html">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#121318">
-<meta property="og:title" content="Cómo demostrarle a tu proveedor que el internet se cae">
-<meta property="og:description" content="Descarta tu propio Wi-Fi, registra cada caída con hora exacta gratis, y sabe qué pedir en la llamada de soporte.">
-<meta property="og:url" content="https://internetmonitor.app/prove-internet-outages.es.html">
-<meta property="og:image" content="https://internetmonitor.app/assets/img/og.jpg">
-<meta property="og:type" content="article">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Cómo demostrarle a tu proveedor que el internet se cae",
+---
+import DocLayout from "../layouts/DocLayout.astro";
+import { storeUrl, PRICE_LABEL, PRICE_USD } from "../config/site";
+
+const page = {
+  "lang": "es" as const,
+  "title": "Cómo demostrarle a tu proveedor que el internet se cae",
   "description": "Guía práctica para demostrar los cortes de internet a tu proveedor: descarta tu propio Wi-Fi, registra cada caída con hora exacta gratis, y sabe qué pedir en la llamada de soporte.",
-  "author": {"@type": "Person", "name": "Andres Carreno"},
-  "publisher": {"@type": "Organization", "name": "Internet Monitor: Uptime", "url": "https://internetmonitor.app"},
-  "mainEntityOfPage": "https://internetmonitor.app/prove-internet-outages.es.html",
-  "inLanguage": "es"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "path": "/prove-internet-outages.es.html",
+  "alternates": {
+    "en": "/prove-internet-outages.html",
+    "es": "/prove-internet-outages.es.html"
+  },
+  "ogDescription": "Descarta tu propio Wi-Fi, registra cada caída con hora exacta gratis, y sabe qué pedir en la llamada de soporte.",
+  "ogType": "article" as const,
+  "jsonLd": [
     {
-      "@type": "Question",
-      "name": "¿Cómo le demuestro a mi proveedor que el internet se cae?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Registra cada caída con hora exacta durante al menos una semana: corre un ping con marca de tiempo desde Terminal o usa una app de monitoreo, captura el registro de eventos de tu router y prueba por cable para descartar el Wi-Fi. Luego abre un ticket y adjunta el registro con inicio, fin, duración y frecuencia de cada corte."}
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Cómo demostrarle a tu proveedor que el internet se cae",
+      "description": "Guía práctica para demostrar los cortes de internet a tu proveedor: descarta tu propio Wi-Fi, registra cada caída con hora exacta gratis, y sabe qué pedir en la llamada de soporte.",
+      "author": {
+        "@type": "Person",
+        "name": "Andres Carreno"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Internet Monitor: Uptime",
+        "url": "https://internetmonitor.app"
+      },
+      "mainEntityOfPage": "https://internetmonitor.app/prove-internet-outages.es.html",
+      "inLanguage": "es"
     },
     {
-      "@type": "Question",
-      "name": "¿Cómo registro los cortes de internet gratis?",
-      "acceptedAnswer": {"@type": "Answer", "text": "En un Mac, corre en Terminal un ciclo de ping que le ponga fecha y hora a cada respuesta y lo guarde en un archivo. El registro de eventos de tu propio router (reconexiones, renovaciones DHCP, pérdida de sincronización) también es evidencia gratis del equipo del proveedor; captúralo antes de reiniciar, porque muchos routers lo borran."}
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué evidencia acepta un proveedor de internet?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Un registro que responda cuatro preguntas: cuándo empezó y terminó exactamente cada corte, cuánto duró, cada cuánto pasa, y si de verdad era la línea, demostrado con caídas por cable o en todos los dispositivos a la vez. Los pantallazos de tests de velocidad prueban velocidad, no continuidad."}
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo pedir compensación por los cortes de internet?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Muchos contratos incluyen créditos por caídas del servicio, pero casi ningún proveedor los aplica si no los pides con fechas en la mano. Abre un ticket, envía la evidencia por un canal que deje registro y pide la compensación. Si nada cambia, escala a un supervisor y luego al regulador de telecomunicaciones de tu país."}
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo le demuestro a mi proveedor que el internet se cae?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Registra cada caída con hora exacta durante al menos una semana: corre un ping con marca de tiempo desde Terminal o usa una app de monitoreo, captura el registro de eventos de tu router y prueba por cable para descartar el Wi-Fi. Luego abre un ticket y adjunta el registro con inicio, fin, duración y frecuencia de cada corte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo registro los cortes de internet gratis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En un Mac, corre en Terminal un ciclo de ping que le ponga fecha y hora a cada respuesta y lo guarde en un archivo. El registro de eventos de tu propio router (reconexiones, renovaciones DHCP, pérdida de sincronización) también es evidencia gratis del equipo del proveedor; captúralo antes de reiniciar, porque muchos routers lo borran."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué evidencia acepta un proveedor de internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un registro que responda cuatro preguntas: cuándo empezó y terminó exactamente cada corte, cuánto duró, cada cuánto pasa, y si de verdad era la línea, demostrado con caídas por cable o en todos los dispositivos a la vez. Los pantallazos de tests de velocidad prueban velocidad, no continuidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo pedir compensación por los cortes de internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Muchos contratos incluyen créditos por caídas del servicio, pero casi ningún proveedor los aplica si no los pides con fechas en la mano. Abre un ticket, envía la evidencia por un canal que deje registro y pide la compensación. Si nada cambia, escala a un supervisor y luego al regulador de telecomunicaciones de tu país."
+          }
+        }
+      ]
     }
   ]
-}
-</script>
-</head>
-<body>
-<main>
-  <h1>Cómo demostrarle a tu proveedor que el internet se cae</h1>
+};
+---
+<DocLayout {...page}>
+<h1>Cómo demostrarle a tu proveedor que el internet se cae</h1>
   <p class="muted">Actualizado en octubre de 2026</p>
 
   <p><strong>La respuesta corta:</strong> registra cada caída con hora exacta durante al menos una semana. Corre un ping con marca de tiempo desde Terminal o usa una app de monitoreo, fotografía el registro de eventos de tu router y prueba por cable para descartar el Wi-Fi. Luego abre un ticket y adjunta el registro con inicio, fin, duración y frecuencia de cada corte.</p>
@@ -112,13 +123,7 @@
   </ul>
 
   <h2>O automatiza todo esto</h2>
-  <p><a href="index.es.html">Internet Monitor: Uptime</a> es una app para la barra de menús del Mac que hace el paso 2 por ti, permanentemente: revisa tu conexión cada segundo, registra cada corte con inicio, fin y duración exactos, separa la evidencia por red (para que el historial de tu línea de casa no se contamine con el Wi-Fi del café) y exporta con un clic un reporte PDF hecho para adjuntar a un ticket de soporte. Cuesta <a href="https://apps.apple.com/app/apple-store/id6818842901?pt=127166683&amp;ct=site&amp;mt=8">US$4.99 en el Mac App Store</a>, una sola vez, y no recopila ningún dato tuyo: todo se queda en tu Mac.</p>
+  <p><a href="/index.es.html">Internet Monitor: Uptime</a> es una app para la barra de menús del Mac que hace el paso 2 por ti, permanentemente: revisa tu conexión cada segundo, registra cada corte con inicio, fin y duración exactos, separa la evidencia por red (para que el historial de tu línea de casa no se contamine con el Wi-Fi del café) y exporta con un clic un reporte PDF hecho para adjuntar a un ticket de soporte. Cuesta <a href={storeUrl("site")} rel="noopener">{PRICE_LABEL} en el Mac App Store</a>, una sola vez, y no recopila ningún dato tuyo: todo se queda en tu Mac.</p>
 
-  <nav><a href="index.es.html">Inicio</a><a href="support.es.html">Soporte</a><a href="prove-internet-outages.html">English</a></nav>
-</main>
-<footer>
-  <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6818842901?pt=127166683&amp;ct=site&amp;mt=8"><img src="assets/img/mac-app-store-badge-es.svg" alt="Descárgalo en el Mac App Store"></a>
-  <p>&copy; 2026 Andres Carreno</p>
-</footer>
-</body>
-</html>
+  <nav><a href="/index.es.html">Inicio</a><a href="/support.es.html">Soporte</a><a href="/prove-internet-outages.html">English</a></nav>
+</DocLayout>

@@ -1,0 +1,66 @@
+---
+import DocLayout from "../layouts/DocLayout.astro";
+import { storeUrl, PRICE_LABEL, PRICE_USD } from "../config/site";
+
+const page = {
+  "lang": "en" as const,
+  "title": "Shipping an MCP server inside a sandboxed Mac App Store app",
+  "description": "Field notes from bundling an MCP server in a Mac App Store app: the stdio-over-HTTP decision, the launcher bug that only broke for customers, and the Chinese AI rule that rejected an update.",
+  "path": "/shipping-mcp-in-a-sandboxed-mac-app.html",
+  "ogDescription": "The stdio decision, the launcher bug that only broke for customers, and the Chinese AI rule that rejected an update.",
+  "ogType": "article" as const,
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Shipping an MCP server inside a sandboxed Mac App Store app",
+      "description": "Field notes from bundling an MCP server in a Mac App Store app: the stdio decision, the launcher bug that only broke for customers, and the Chinese AI rule that rejected an update.",
+      "author": {
+        "@type": "Person",
+        "name": "Andres Carreno"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Internet Monitor: Uptime",
+        "url": "https://internetmonitor.app"
+      },
+      "mainEntityOfPage": "https://internetmonitor.app/shipping-mcp-in-a-sandboxed-mac-app.html",
+      "inLanguage": "en"
+    }
+  ]
+};
+---
+<DocLayout {...page}>
+<h1>Shipping an MCP server inside a sandboxed Mac App Store app</h1>
+  <p class="muted">October 2026 &middot; by Andres Carreno</p>
+
+  <p>I make <a href="/">Internet Monitor: Uptime</a>, a ${PRICE_USD} menu bar app that logs internet outages as evidence for ISP complaints. It bundles an MCP server, so Claude, ChatGPT or any MCP client can answer "how was my internet this week?" from data that never leaves your Mac. This post is mostly about the two things that actually hurt: a hardcoded path that made the feature work for exactly one person (me), and a Chinese AI regulation that got an update rejected. The MCP part turned out to be the easy bit.</p>
+
+  <h2>Why MCP instead of a local HTTP API</h2>
+  <p>The feature I wanted was "ask about your connection in plain language". The obvious design was a local HTTP API plus documentation nobody reads. MCP fit better: the assistant is the UI, the protocol handles discovery, and I ship no server infrastructure.</p>
+
+  <h2>The boring architecture, on purpose</h2>
+  <p>A small helper binary inside the app bundle speaks MCP over stdio with hand-rolled JSON-RPC: initialize, tools/list, tools/call, and nothing else. No SDK, no dependencies. It exposes five read-only tools (current status, uptime, the outage list, latency statistics, networks seen).</p>
+  <p>Two properties I would keep in any future design:</p>
+  <ul>
+    <li>It opens no network port. A localhost HTTP server inside a sandboxed app invites auth, CORS, and "what else can connect to this" questions. Stdio has exactly one client: the process that spawned it.</li>
+    <li>The helper reads the app's data files directly (JSONL day files plus per-minute aggregates, shared through an app group container), read-only. It works with the app closed, and the worst it can possibly do is read what is already on disk.</li>
+  </ul>
+
+  <h2>"Works on my machine", the App Store edition</h2>
+  <p>Claude Desktop installs MCP servers from .mcpb bundles, so the app has an Install Claude Extension button and the website hosts the same file. The extension does not contain the server; it contains a launcher script that finds the installed app and executes the bundled binary.</p>
+  <p>Version 1.0 of that launcher looked for "/Applications/Internet Monitor.app", with a space. The App Store installs the bundle as "InternetMonitor.app", without one. Why did every test pass? Because the launcher had a development fallback: if the app was not in /Applications, it searched my Xcode DerivedData. On my Mac the feature was flawless. For every customer, it connected to exactly nothing.</p>
+  <p>The fix tries both names in /Applications and ~/Applications, then falls back to a Spotlight query by bundle identifier. The deeper lesson stung more than the bug: my tests exercised the dev build's happy path and never the exact artifact the store installs, and the one environment difference that mattered, the renamed bundle, was invisible until a stranger ran it.</p>
+  <p>There is a sandbox corollary. The already-installed extension copies live inside Claude Desktop's own container, where my code cannot touch them. The entire "update" story for a broken launcher is a button that asks the user to please install it again.</p>
+
+  <h2>Rejected under Guideline 5: the Chinese AI rule I did not know existed</h2>
+  <p>The next submission was an ordinary bug-fix update. The rejection was not: Guideline 5, Legal. Under China's deep synthesis regulations, generative AI services need an MIIT permit to operate there, ChatGPT does not have one, and my app's metadata says "ChatGPT". Apple's position: on the China storefront, an app may not reference a service that lacks the permit, anywhere in its name, subtitle, description or screenshots.</p>
+  <p>The options Apple offered: strip every ChatGPT and OpenAI reference worldwide, stop distributing in China, or argue compliance. Since "works with your AI assistant" is the one feature nothing else in this niche has, removing the references globally would have meant marketing around my own differentiator. I deselected the China mainland storefront in App Store Connect and resubmitted the same build. It was approved without further questions.</p>
+  <p>If your app's metadata names an AI assistant, any AI assistant, this rule is waiting for you. I found no mention of it in any indie dev checklist; it cost me a review cycle to learn it exists.</p>
+
+  <h2>Was it worth it</h2>
+  <p>Yes. The server cost a few hundred lines of Swift plus the bruises above. It also matches how I wanted the app to behave anyway: no accounts, no analytics, an App Privacy label that reads "Data Not Collected". The assistant comes to your data; your data goes nowhere.</p>
+  <p>The app is Internet Monitor: Uptime, <a href={storeUrl("hn")} rel="noopener">on the Mac App Store for ${PRICE_USD} one-time</a> (launch price for the first two weeks, then $9.99). The MCP setup guide is at <a href="/ai.html">internetmonitor.app/ai</a>.</p>
+
+  <nav><a href="/">Home</a><a href="/ai.html">AI setup</a><a href="/support.html">Support</a></nav>
+</DocLayout>

@@ -1,0 +1,98 @@
+---
+import Head from "../components/Head.astro";
+import "../styles/landing.css";
+import type { Lang } from "../config/site";
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;
+  alternates: { en: string; es: string };
+  ogTitle?: string;
+  ogDescription?: string;
+  jsonLd?: object | object[];
+  /** LCP image to fetch ahead of layout (the hero video poster). */
+  preloadImage?: string;
+}
+
+const { lang, preloadImage, ...head } = Astro.props;
+
+const footer =
+  lang === "es"
+    ? {
+        links: [
+          ["/privacy.es.html", "Privacidad"],
+          ["/support.es.html", "Soporte"],
+          ["/ai.es.html", "Configurar IA"],
+          ["/prove-internet-outages.es.html", "Guía ISP"],
+        ],
+        other: { href: "/", label: "English", lang: "en" },
+      }
+    : {
+        links: [
+          ["/privacy.html", "Privacy"],
+          ["/support.html", "Support"],
+          ["/ai.html", "AI setup"],
+          ["/prove-internet-outages.html", "ISP guide"],
+        ],
+        other: { href: "/index.es.html", label: "Español", lang: "es" },
+      };
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <Head lang={lang} {...head}>
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high">}
+  </Head>
+</head>
+<body>
+<slot />
+<footer>
+  <div class="container">
+    <span>&copy; 2026 Andres Carreno</span>
+    <nav>
+      {footer.links.map(([href, label]) => <a href={href}>{label}</a>)}
+      <a href={footer.other.href} lang={footer.other.lang} hreflang={footer.other.lang}>{footer.other.label}</a>
+    </nav>
+  </div>
+</footer>
+<!--
+  The only client script on the site, kept inline and dependency-free: it
+  reveals sections on scroll and animates the hero uptime figure. Content is
+  fully visible without it (the reveal styles only apply under html.js).
+-->
+<script is:inline>
+document.documentElement.classList.add("js");
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var items = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add("in"); });
+  }
+  var pct = document.querySelector(".ring-wrap .pct");
+  if (pct && !reduce) {
+    var start;
+    pct.textContent = "0%";
+    requestAnimationFrame(function step(ts) {
+      if (start === undefined) start = ts;
+      var p = Math.min((ts - start) / 1400, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      pct.textContent = (99.8 * eased).toFixed(1) + "%";
+      if (p < 1) requestAnimationFrame(step);
+    });
+  }
+})();
+</script>
+</body>
+</html>

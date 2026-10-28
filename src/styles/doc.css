@@ -43,6 +43,8 @@ p, li { color: var(--text); }
 .small { font-size: 0.88rem; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+/* Links inside running text need a non-color cue (WCAG 1.4.1). */
+p a, li a { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
 .ring {
   width: 52px; height: 52px; border-radius: 50%;
   border: 7px solid var(--up);

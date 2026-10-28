@@ -1,28 +1,20 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Internet Monitor: Uptime para Mac, el monitor de internet que te da pruebas</title>
-<meta name="description" content="Una app nativa para la barra de menús de tu Mac que detecta cortes de hasta un segundo, separa la evidencia por red y genera un reporte PDF para tu proveedor. Tu IA también puede consultarla (MCP).">
-<link rel="canonical" href="https://internetmonitor.app/index.es.html">
-<link rel="alternate" hreflang="en" href="https://internetmonitor.app/">
-<link rel="alternate" hreflang="es" href="https://internetmonitor.app/index.es.html">
-<meta property="og:title" content="Internet Monitor: Uptime para Mac">
-<meta property="og:description" content="El monitor de internet que te da pruebas. Cortes de hasta un segundo, evidencia por red y un reporte PDF para tu proveedor.">
-<meta property="og:image" content="https://internetmonitor.app/assets/img/og.jpg">
-<meta property="og:url" content="https://internetmonitor.app/index.es.html">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://internetmonitor.app/assets/img/og.jpg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#121318">
-<link rel="stylesheet" href="landing.css">
-<script type="application/ld+json">
-{
+---
+import { getImage } from "astro:assets";
+import LandingLayout from "../layouts/LandingLayout.astro";
+import Shot from "../components/Shot.astro";
+import StoreBadge from "../components/StoreBadge.astro";
+import { PRICE_LABEL, PRICE_USD } from "../config/site";
+import demoPoster from "../assets/img/demo-poster.webp";
+import drilldownEs from "../assets/img/drilldown-es.webp";
+import reportEs from "../assets/img/report-es.webp";
+import panelEs from "../assets/img/panel-es.webp";
+import notificationsEs from "../assets/img/notifications-es.webp";
+import aiEs from "../assets/img/ai-es.webp";
+
+// The poster is the LCP element; one WebP sized for a 2x hero is enough.
+const poster = await getImage({ src: demoPoster, format: "webp", width: 1564 });
+
+const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Internet Monitor: Uptime",
@@ -30,24 +22,43 @@
   "applicationCategory": "UtilitiesApplication",
   "description": "Una app nativa para la barra de menus de macOS que detecta cortes de hasta un segundo, separa la evidencia por red y genera un reporte PDF para tu proveedor.",
   "inLanguage": "es",
-  "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "USD" },
+  "offers": {
+    "@type": "Offer",
+    "price": PRICE_USD,
+    "priceCurrency": "USD"
+  },
   "url": "https://internetmonitor.app/index.es.html",
   "downloadUrl": "https://apps.apple.com/app/id6818842901",
-  "author": { "@type": "Person", "name": "Andres Carreno", "url": "https://andrescarreno.co" }
-}
-</script>
-</head>
-<body>
+  "author": {
+    "@type": "Person",
+    "name": "Andres Carreno",
+    "url": "https://andrescarreno.co"
+  }
+};
 
+const page = {
+  "lang": "es" as const,
+  "title": "Internet Monitor: Uptime para Mac, el monitor de internet que te da pruebas",
+  "description": "Una app nativa para la barra de menús de tu Mac que detecta cortes de hasta un segundo, separa la evidencia por red y genera un reporte PDF para tu proveedor. Tu IA también puede consultarla (MCP).",
+  "path": "/index.es.html",
+  "alternates": {
+    "en": "/",
+    "es": "/index.es.html"
+  },
+  "ogTitle": "Internet Monitor: Uptime para Mac",
+  "ogDescription": "El monitor de internet que te da pruebas. Cortes de hasta un segundo, evidencia por red y un reporte PDF para tu proveedor."
+};
+---
+<LandingLayout {...page} jsonLd={jsonLd} preloadImage={poster.src}>
 <header class="hero">
   <div class="container">
     <div class="nav">
-      <a class="brand" href="index.es.html"><span class="ring-mini" aria-hidden="true"></span><span>Internet Monitor<span class="brand-sub">: Uptime</span></span></a>
+      <a class="brand" href="/index.es.html"><span class="ring-mini" aria-hidden="true"></span><span>Internet Monitor<span class="brand-sub">: Uptime</span></span></a>
       <nav>
         <a href="#features" class="hide-sm">Funciones</a>
         <a href="#mcp">IA&nbsp;+&nbsp;MCP</a>
-        <a href="support.es.html">Soporte</a>
-        <a href="./" lang="en" hreflang="en">English</a>
+        <a href="/support.es.html">Soporte</a>
+        <a href="/" lang="en" hreflang="en">English</a>
       </nav>
     </div>
 
@@ -58,12 +69,10 @@
       </div>
       <h1>El monitor de internet que te da <em>pruebas</em></h1>
       <p class="sub">Una app nativa para la barra de menús de tu Mac que detecta cortes de hasta un segundo, separa la evidencia por red y la convierte en un reporte PDF que tu proveedor no puede discutir.</p>
-      <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6818842901?pt=127166683&amp;ct=site&amp;mt=8">
-        <img src="assets/img/mac-app-store-badge-es.svg" alt="Descárgalo en el Mac App Store">
-      </a>
-      <p class="fineprint">US$4.99, compra única &middot; macOS 14 o superior &middot; Privacidad: no se recopilan datos</p>
+      <StoreBadge lang="es" />
+      <p class="fineprint">{PRICE_LABEL}, compra única &middot; macOS 14 o superior &middot; Privacidad: no se recopilan datos</p>
       <figure class="shot hero-shot">
-        <video src="assets/video/demo.mp4" poster="assets/img/demo-poster.webp" controls preload="none" playsinline muted width="1564" height="1080" aria-label="Demo de 30 segundos: Internet Monitor detecta un corte, avisa cuando empieza y termina, y lo muestra en el dashboard con la hora exacta"></video>
+        <video src="/assets/video/demo.mp4" poster={poster.src} controls preload="none" playsinline muted width="1564" height="1080" aria-label="Demo de 30 segundos: Internet Monitor detecta un corte, avisa cuando empieza y termina, y lo muestra en el dashboard con la hora exacta"></video>
       </figure>
     </div>
   </div>
@@ -87,9 +96,7 @@
           <p>Internet Monitor revisa tu conexión cada dos segundos, o cada uno si quieres. Cada chequeo fallido se <strong>confirma con un reintento inmediato</strong>, así que hasta un corte de un segundo queda en tu historial como un hecho, no una sensación.</p>
           <p>Expande cualquier corte y ve exactamente qué falló: cada objetivo de sondeo, cada muestra de latencia y si el DNS seguía respondiendo.</p>
         </div>
-        <figure class="shot">
-          <img src="assets/img/drilldown-es.webp" alt="Detalle de un corte con los resultados por sonda alrededor de un corte confirmado de un segundo" width="1600" height="1035" loading="lazy">
-        </figure>
+        <Shot src={drilldownEs} alt="Detalle de un corte con los resultados por sonda alrededor de un corte confirmado de un segundo" />
       </article>
 
       <article class="feature flip reveal">
@@ -99,9 +106,7 @@
           <p>Decir "se siente inestable" no sirve de nada con soporte. Elige un período y una red y obtén un PDF impecable: <strong>cada corte con su hora exacta</strong>, uptime y latencia por día, listo para adjuntar a tu reclamo.</p>
           <p>Deja que los datos discutan por ti.</p>
         </div>
-        <figure class="shot light">
-          <img src="assets/img/report-es.webp" alt="Reporte PDF de conexión generado por la app, abierto en Vista Previa, con resumen y gráficas" width="1400" height="1227" loading="lazy">
-        </figure>
+        <Shot src={reportEs} alt="Reporte PDF de conexión generado por la app, abierto en Vista Previa, con resumen y gráficas" class="light" />
       </article>
 
       <article class="feature reveal">
@@ -111,9 +116,7 @@
           <p>Cada chequeo queda <strong>etiquetado con la red donde corrió</strong>. Wi-Fi de casa, oficina, hotspot: cada una mantiene su propio uptime, sus cortes y su reporte, para que tu reclamo solo culpe al proveedor que lo merece. Ningún otro monitor hace esto.</p>
           <p>El panel de la barra de menús tiene lo esencial a un clic: latencia en vivo, estado del DNS, IP local y pública, ancho de banda y datos usados.</p>
         </div>
-        <figure class="shot">
-          <img src="assets/img/panel-es.webp" alt="Panel de la barra de menús con el estado de la conexión, ancho de banda, IPs y el nombre de la red actual" width="760" height="945" loading="lazy" style="max-width: 420px; margin: 0 auto;">
-        </figure>
+        <Shot src={panelEs} alt="Panel de la barra de menús con el estado de la conexión, ancho de banda, IPs y el nombre de la red actual" cap={420} capStyle />
       </article>
 
       <article class="feature flip reveal">
@@ -122,9 +125,7 @@
           <h2>Entérate en el momento en que se cae, y cuando vuelve</h2>
           <p>Notificaciones nativas cuando la conexión se cae y cuando regresa, <strong>con la duración del corte</strong>. Define tu umbral y tu sonido, y los cortes repetidos se agrupan en un solo aviso de "conexión inestable" en vez de una tormenta.</p>
         </div>
-        <figure class="shot">
-          <img src="assets/img/notifications-es.webp" alt="Notificaciones de macOS: internet caído, e internet de vuelta tras 1.0s" width="1400" height="762" loading="lazy">
-        </figure>
+        <Shot src={notificationsEs} alt="Notificaciones de macOS: internet caído, e internet de vuelta tras 1.0s" />
       </article>
 
     </section>
@@ -137,11 +138,9 @@
           <p class="q">"¿Cómo estuvo mi internet esta semana?"</p>
           <p>Un servidor MCP incluido permite que <strong>Claude, ChatGPT o cualquier cliente MCP</strong> responda con tus propios datos locales: uptime, cortes, latencia, por red. Instalación de un clic para Claude y una configuración corta para el resto.</p>
           <p>Tus mediciones nunca salen de tu Mac; tu IA viene a ellas. Ningún otro monitor de internet tiene esto.</p>
-          <p><a class="link" href="ai.es.html">Configúralo en un clic &rarr;</a></p>
+          <p><a class="link" href="/ai.es.html">Configúralo en un clic &rarr;</a></p>
         </div>
-        <figure class="shot">
-          <img src="assets/img/ai-es.webp" alt="Pantalla de bienvenida: pregúntale a tu IA por tu internet, con un botón para instalar la extensión de Claude" width="1200" height="1315" loading="lazy">
-        </figure>
+        <Shot src={aiEs} alt="Pantalla de bienvenida: pregúntale a tu IA por tu internet, con un botón para instalar la extensión de Claude" cap={420} />
       </div>
     </section>
 
@@ -149,7 +148,7 @@
       <div class="seal"><span aria-hidden="true">&#10003;</span> Privacidad: no se recopilan datos</div>
       <h2>Privada por diseño</h2>
       <p>Sin cuenta, sin analítica, sin rastreo. Todo lo que la app mide se queda en tu Mac como archivos simples que puedes exportar cuando quieras. La app solo usa internet para medirlo.</p>
-      <p><a href="privacy.es.html">Lee la política de privacidad</a></p>
+      <p><a href="/privacy.es.html">Lee la política de privacidad</a></p>
     </section>
 
     <section class="grid" aria-label="Más funciones">
@@ -182,59 +181,10 @@
     <section class="cta reveal">
       <h2>Deja de discutir con tu proveedor. Empieza a probar.</h2>
       <p>Una sola compra, todas las funciones incluidas. Sin suscripción.</p>
-      <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6818842901?pt=127166683&amp;ct=site&amp;mt=8">
-        <img src="assets/img/mac-app-store-badge-es.svg" alt="Descárgalo en el Mac App Store">
-      </a>
-      <p class="fineprint">US$4.99 &middot; macOS 14 o superior</p>
+      <StoreBadge lang="es" />
+      <p class="fineprint">{PRICE_LABEL} &middot; macOS 14 o superior</p>
     </section>
 
   </div>
 </main>
-
-<footer>
-  <div class="container">
-    <span>&copy; 2026 Andres Carreno</span>
-    <nav>
-      <a href="privacy.es.html">Privacidad</a>
-      <a href="support.es.html">Soporte</a>
-      <a href="ai.es.html">Configurar IA</a>
-      <a href="prove-internet-outages.es.html">Guía ISP</a>
-      <a href="./" lang="en" hreflang="en">English</a>
-    </nav>
-  </div>
-</footer>
-
-<script>
-document.documentElement.classList.add("js");
-(function () {
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var items = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -10% 0px" });
-    items.forEach(function (el) { io.observe(el); });
-  } else {
-    items.forEach(function (el) { el.classList.add("in"); });
-  }
-  var pct = document.querySelector(".ring-wrap .pct");
-  if (pct && !reduce) {
-    var start;
-    pct.textContent = "0%";
-    requestAnimationFrame(function step(ts) {
-      if (start === undefined) start = ts;
-      var p = Math.min((ts - start) / 1400, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      pct.textContent = (99.8 * eased).toFixed(1) + "%";
-      if (p < 1) requestAnimationFrame(step);
-    });
-  }
-})();
-</script>
-</body>
-</html>
+</LandingLayout>

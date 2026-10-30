@@ -5,8 +5,7 @@ export const APP_NAME = "Internet Monitor: Uptime";
 export const AUTHOR = { name: "Andres Carreno", url: "https://andrescarreno.co" };
 export const CONTACT_EMAIL = "hello@andrescarreno.co";
 
-// The one place the price lives. The launch posts promise US$4.99 for two
-// weeks; the raise (AND-121) is a change to this line only.
+// The one place the price lives: every page and llms.txt read it from here.
 export const PRICE_USD = "4.99";
 export const PRICE_LABEL = `US$${PRICE_USD}`;
 

@@ -42,10 +42,4 @@ export const PAGES: SitePage[] = [
     summary:
       "a practical guide to ruling out Wi-Fi problems, logging outages with timestamps for free, and getting outage credits from a provider",
   },
-  {
-    en: "/shipping-mcp-in-a-sandboxed-mac-app",
-    title: "Shipping an MCP server inside a sandboxed Mac App Store app",
-    summary:
-      "field notes on bundling an MCP server in a Mac App Store app: the stdio design, a launcher bug and a Chinese AI rule that rejected an update",
-  },
 ];

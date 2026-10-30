@@ -6,7 +6,7 @@ Agreed with Andres on 2026-10-18. The same agreement lives in the internet-monit
 
 Two permanent owner sessions in the Claude desktop app:
 
-- "Internet Monitor: Web & Marketing" owns THIS repo (internet-monitor-site): the website, the internetmonitor.app domain, marketing content, and the "Internet Monitor: Launch marketing" Linear project.
+- "Internet Monitor: Web & Marketing" owns THIS repo (internet-monitor-site): the website, the internetmonitor.app domain and marketing content.
 - "Internet Monitor: App & Releases" owns internet-monitor-mac: app code, versions, releases, App Store Connect. The app repo is reference material here (design language, screenshots, feature copy); never modify it from this session.
 
 New work goes to its owner session; a session asked about the other domain redirects or dispatches, it does not do the work itself. Temporary task sessions are spawned for large or parallel batches with a closed brief: they work on a branch, report back, and are archived when done. New topics never go to a task session.
@@ -18,7 +18,7 @@ New work goes to its owner session; a session asked about the other domain redir
 ## Linear (workspace "Andres Carreño")
 
 - Everything app-related (bugs, features, maintenance, release chores) goes to the project "Internet Monitor for Mac (App Store)".
-- The "Internet Monitor: Launch marketing" project is only for the marketing initiative.
+- Site work also goes to "Internet Monitor for Mac (App Store)": the "Internet Monitor: Launch marketing" project was deleted on 2026-10-29 when the project moved to passive mode (no active marketing).
 
 ## House rules
 

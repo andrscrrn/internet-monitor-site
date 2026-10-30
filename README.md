@@ -1,10 +1,27 @@
 # Internet Monitor for Mac: product site
 
-Static site for [Internet Monitor](https://andrscrrn.github.io/internet-monitor-site/), a native macOS menu bar app that watches your internet connection: instant status at a glance, sub-second outage history, latency charts, and a PDF report you can hand to your ISP.
+Source of [internetmonitor.app](https://internetmonitor.app), the site for Internet Monitor: Uptime, a native macOS menu bar app that logs internet outages as evidence for ISP complaints.
 
-This repository exists to serve the pages the Mac App Store listing requires:
+## Stack
 
-- [Privacy policy](https://andrscrrn.github.io/internet-monitor-site/privacy.html): the app collects no data, and this page says so in detail.
-- [Support](https://andrscrrn.github.io/internet-monitor-site/support.html): contact and frequently asked questions.
+- [Astro 5](https://astro.build), fully static output, zero client JavaScript except a small inline reveal animation and Astro's viewport prefetch.
+- Hosted on Cloudflare Pages: every push to `main` deploys; other branches get preview URLs on `internet-monitor-site.pages.dev`.
+- DNS for internetmonitor.app lives in Cloudflare (registrar: Porkbun). A redirect rule sends `www` to the root domain.
 
-The app itself is developed in a separate private repository; this one holds only the public site, published with GitHub Pages from `main`.
+## Layout
+
+- `src/pages/`: one file per page. English at the root (`/support`), Spanish under `/es` (`/es/support`).
+- `src/config/site.ts`: price, App Store campaign links and other shared constants.
+- `src/config/pages.ts`: page registry that generates `sitemap.xml` and `llms.txt`.
+- `public/`: files served as-is, including `_headers` (caching), `_redirects` (old Spanish URLs), the MCP extension bundle and `.well-known/mcp-registry-auth` (needed to publish to the MCP registry; do not remove).
+
+## Develop
+
+```
+npm install
+npm run dev      # local server
+npm run build    # static output in dist/
+npm run check    # type check
+```
+
+The `legacy-site` branch is only a redirect stub that GitHub Pages serves at andrscrrn.github.io/internet-monitor-site, so old links land on internetmonitor.app.

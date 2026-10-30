@@ -13,7 +13,7 @@ New work goes to its owner session; a session asked about the other domain redir
 
 ## Git
 
-- main is always deployable (GitHub Pages publishes it at https://internetmonitor.app). Small changes commit straight to main; larger batches use a short branch and fast-forward merge. Linear history, no PRs.
+- main is always deployable: Cloudflare Pages builds it (`npm run build`) and publishes it at https://internetmonitor.app on every push. Small changes commit straight to main; larger batches use a short branch (each gets a pages.dev preview) and fast-forward merge. Linear history, no PRs.
 
 ## Linear (workspace "Andres Carreño")
 
